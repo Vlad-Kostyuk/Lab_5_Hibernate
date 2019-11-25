@@ -1,9 +1,27 @@
 package ua.lviv.iot.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "users")
 public class User {
+    
+ @Id
+ @GeneratedValue(strategy = GenerationType.IDENTITY)
  private int userId;
+ 
+ @Column (name = "nick_name")
  private String nickName;
+ 
+ @Column (name = "foto")
  private String foto;
+ 
+ @Column (name = "last_activity")
  private String lastActivity;
  
 	public int getUserId() {
